@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.maincontroller">
+   <children>
+      <BorderPane layoutX="-10.0" layoutY="40.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="167.0" layoutY="20.0" prefHeight="35.0" prefWidth="600.0" style="-fx-background-color: #2a9e66;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="MenuClose" layoutX="1.0" layoutY="-1.0" prefHeight="38.0" prefWidth="26.0" text="≡">
+                           <font>
+                              <Font size="26.0" />
+                           </font></Label>
+                        <Label fx:id="Menu" layoutX="5.0" layoutY="-5.0" prefHeight="46.0" prefWidth="18.0" text="≡">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+
+                  <HBox layoutY="40.0" prefHeight="26.0" prefWidth="600.0" styleClass="menuItem" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                     <children>
+                        <Label prefHeight="38.0" prefWidth="136.0" />
+                        <Label prefHeight="26.0" prefWidth="32.0" />
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: none;" text="Home" />
+                        <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Mungesat" />
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: none;" text="Studentet" />
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: none;" onAction="#raportet" text="Raportet" />
+                        <ImageView fitHeight="32.0" fitWidth="22.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" styleClass="menuItem">
+                           <image>
+                              <Image url="@app/images/1246334.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" styleClass="menuItem">
+                           <image>
+                              <Image url="@app/images/16111644.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="slider" prefHeight="333.0" prefWidth="176.0" style="-fx-background-color: #2a9e66;" styleClass="sidebarItem" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="Exit" fitHeight="22.0" fitWidth="22.0" layoutX="24.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@app/images/263115.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="24.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@app/images/9948629.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="24.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@app/images/3135773.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="24.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@app/images/15054109.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="24.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@app/images/1246334.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="24.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@app/images/16111644.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="62.0" layoutY="40.0" mnemonicParsing="false" scaleShape="false" style="-fx-background-color: none;" text="Home" wrapText="true" />
+                  <Button layoutX="57.0" layoutY="72.0" mnemonicParsing="false" style="-fx-background-color: none;" text="Mungesat" textFill="#0d0d0d" />
+                  <Button layoutX="58.0" layoutY="108.0" mnemonicParsing="false" style="-fx-background-color: none;" text="Studentat" />
+                  <Button fx:id="raportet" layoutX="61.0" layoutY="143.0" mnemonicParsing="false" onAction="#raportet" style="-fx-background-color: none;" text="Raportet" />
+                  <Button layoutX="63.0" layoutY="184.0" mnemonicParsing="false" style="-fx-background-color: none;" text="Gjuha" />
+                  <Button layoutX="63.0" layoutY="225.0" mnemonicParsing="false" style="-fx-background-color: none;" text="Profili" />
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
