@@ -36,6 +36,7 @@ public class maincontroller implements Initializable {
     private AnchorPane slider;
     @FXML
     private Button raportet;
+
     @FXML
     void raportet(ActionEvent event) throws Exception {
         // Mbyll dritaren aktuale

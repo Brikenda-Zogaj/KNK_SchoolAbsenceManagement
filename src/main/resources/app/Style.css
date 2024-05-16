@@ -8,3 +8,52 @@
     -fx-border-color: WHITE;
     -fx-border-width: 0px 0px 0px 3px;
 }
+.pane1{
+
+    -fx-background-color:white;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 30px;
+    -fx-background-radius:30px;
+    -fx-border-style:solid;
+    -fx-border-color:#748CF1;
+    }
+.photo1{
+  -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 30px;
+     -fx-border-style:solid;
+}
+
+.pane2{
+
+    -fx-background-color:#FFB6C1;
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 30px;
+    -fx-background-radius:30px;
+    -fx-border-style:solid;
+    -fx-border-color:#748CF1;
+    }
+    .pane21{
+        -fx-background-color:#ADD8E6;
+         -fx-border-width: 1px 1px 1px 1px;
+            -fx-border-radius: 30px;
+            -fx-background-radius:30px;
+            -fx-border-style:solid;
+            -fx-border-color:#748CF1;
+    }
+
+.pane22{
+ -fx-background-color:#90EE90;
+  -fx-border-width: 1px 1px 1px 1px;
+     -fx-border-radius: 30px;
+     -fx-background-radius:30px;
+     -fx-border-style:solid;
+     -fx-border-color:#748CF1;
+}
+
+.scrollpane{
+
+    -fx-background-color:#D3D3D3;
+
+    -fx-border-style:solid;
+
+    }
