@@ -7,11 +7,8 @@ module org.example.projekti {
     requires javafx.base;
 
 
-    opens app;
-    opens org.example.knk_schoolabsencemanagement_gr25 to javafx.fxml;
-
-    opens controller to javafx.fxml;
-    exports org.example.knk_schoolabsencemanagement_gr25;
-    exports app to javafx.graphics;
+    opens app to javafx.fxml;
+    exports app;
     exports controller;
+    opens controller;
 }
