@@ -20,10 +20,14 @@ public class LoginController implements Initializable {
     public TextField tname;
     public PasswordField tpass;
     public Button btncon;
+    public Button btnsig1;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-    btncon.setOnAction(actionEvent -> login());
+
+        btncon.setOnAction(actionEvent -> login());
+        btnsig1.setOnAction(actionEvent -> direct());
+
     }
     public void login(){
         PreparedStatement st=null;
@@ -51,5 +55,19 @@ public class LoginController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void direct(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/SignUp.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        // Get the stage from the button and set the new scene
+        Stage stage = (Stage) btncon.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }

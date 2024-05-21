@@ -41,5 +41,7 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
+      <Label layoutX="321.0" layoutY="322.0" prefHeight="17.0" prefWidth="133.0" text="Don't have an account?" />
+      <Button fx:id="btnsig1" alignment="CENTER" layoutX="455.0" layoutY="318.0" mnemonicParsing="false" style="-fx-background-color: green;" text="SignUp" textFill="WHITE" />
    </children>
 </AnchorPane>
