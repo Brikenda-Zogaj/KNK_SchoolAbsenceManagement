@@ -7,8 +7,11 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -18,11 +21,13 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class maincontroller implements Initializable {
 
+    public Button profileId;
     @FXML
     private ImageView Exit;
 
@@ -50,6 +55,7 @@ public class maincontroller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        profileId.setOnAction(actionEvent -> direct3());
 
         Exit.setOnMouseClicked(event -> {
             System.exit(0);
@@ -88,4 +94,19 @@ public class maincontroller implements Initializable {
         });
 
     }
+    public void direct3() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Profile.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        // Get the stage from the button and set the new scene
+        Stage stage = (Stage) profileId.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
 }

@@ -37,7 +37,7 @@
       <Label layoutX="139.0" layoutY="195.0" prefHeight="25.0" prefWidth="87.0" text="Username" />
       <Label layoutX="139.0" layoutY="243.0" prefHeight="25.0" prefWidth="87.0" text="Password" />
       <PasswordField fx:id="tpass" layoutX="246.0" layoutY="243.0" prefHeight="25.0" prefWidth="199.0" />
-      <Button fx:id="btnsig" layoutX="329.0" layoutY="336.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" style="-fx-background-color: green;" text="SignUp" textFill="WHITE" />
+      <Button fx:id="btnsig" layoutX="327.0" layoutY="323.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" style="-fx-background-color: green;" text="SignUp" textFill="WHITE" />
       <Line endX="38.66668701171875" endY="7.62939453125E-6" layoutX="176.0" layoutY="117.0" startX="-59.333343505859375" startY="7.62939453125E-6" stroke="GREEN">
          <effect>
             <DropShadow />
@@ -63,5 +63,7 @@
             <DropShadow />
          </effect>
       </Line>
+      <Label layoutX="51.0" layoutY="315.0" text="Already have an account?" />
+      <Button fx:id="btncon1" layoutX="130.0" layoutY="335.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: green;" text="LogIn" textFill="WHITE" />
    </children>
 </AnchorPane>

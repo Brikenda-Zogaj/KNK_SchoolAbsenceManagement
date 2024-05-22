@@ -24,6 +24,7 @@ import java.util.ResourceBundle;
 
 public class SignUpController implements Initializable {
 
+    public Button btncon1;
     @FXML
     private TextField fname;
     @FXML
@@ -40,6 +41,22 @@ public class SignUpController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         btnsig.setOnAction(actionEvent -> signUp());
+        btncon1.setOnAction(actionEvent -> direct2());
+    }
+
+    public void direct2() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/LogIn.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        // Get the stage from the button and set the new scene
+        Stage stage = (Stage) btncon1.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     public static class PasswordHasher {

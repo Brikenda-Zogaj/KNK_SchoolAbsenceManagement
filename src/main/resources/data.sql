@@ -3,7 +3,8 @@ USE projekti;
 CREATE TABLE users(
 ID INT primary key auto_increment,
 USERNAME VARCHAR(20) NOT NULL,
-PASSWORD VARCHAR(1024) NOT NULL
+PASSWORD VARCHAR(1024) NOT NULL,
+salt VARCHAR(500)
 );
 INSERT INTO users (USERNAME,PASSWORD) VALUE("admin","admin");
 
@@ -13,7 +14,9 @@ CREATE TABLE signup_users (
     last_name VARCHAR(50) NOT NULL,
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(1024) NOT NULL,
-    subject VARCHAR(50) NOT NULL
+    subject VARCHAR(50) NOT NULL,
+    salt VARCHAR(500)
 );
+
 
 
