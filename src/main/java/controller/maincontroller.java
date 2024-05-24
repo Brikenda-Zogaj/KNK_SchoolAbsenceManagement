@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
@@ -41,6 +42,7 @@ public class maincontroller implements Initializable {
     private AnchorPane slider;
     @FXML
     private Button raportet;
+
     @FXML
     void raportet(ActionEvent event) throws Exception {
         // Mbyll dritaren aktuale
@@ -53,7 +55,7 @@ public class maincontroller implements Initializable {
     }
 
 
-    @Override
+    @Overriden
     public void initialize(URL location, ResourceBundle resources) {
         profileId.setOnAction(actionEvent -> direct3());
 

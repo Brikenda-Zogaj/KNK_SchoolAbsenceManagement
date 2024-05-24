@@ -1,4 +1,4 @@
-CREATE DATABAse projekti;
+CREATE DATABASE projekti;
 USE projekti;
 CREATE TABLE users(
 ID INT primary key auto_increment,
