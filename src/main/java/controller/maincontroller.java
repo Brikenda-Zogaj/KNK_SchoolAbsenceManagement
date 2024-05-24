@@ -55,7 +55,7 @@ public class maincontroller implements Initializable {
     }
 
 
-    @Overriden
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
         profileId.setOnAction(actionEvent -> direct3());
 
