@@ -55,9 +55,9 @@
                         <Font size="27.0" />
                      </font>
                   </Label>
-                  <ImageView id="photo1id" fx:id="fig1" fitHeight="49.0" fitWidth="62.0" layoutX="15.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="photo1id" fx:id="fig1" fitHeight="49.0" fitWidth="62.0" layoutX="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@app/images/time-management_9606023.png" />
+                        <Image url="@../app/app/images/time-management_9606023.png" />
                      </image>
                   </ImageView>
                </children>
@@ -114,9 +114,9 @@
                   </InnerShadow>
                </effect>
             </Button>
-            <ImageView id="photo2" fx:id="fig2" fitHeight="219.0" fitWidth="412.0" layoutX="376.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="photo2" fx:id="fig2" fitHeight="219.0" fitWidth="412.0" layoutX="378.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@app/images/What-is-an-attendence-manangemnt-system.png" />
+                  <Image url="@../app/app/images/What-is-an-attendence-manangemnt-system.png" />
                </image>
             </ImageView>
          </children>
