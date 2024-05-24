@@ -46,7 +46,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RaportetController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane layoutX="-1.0" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
             <AnchorPane fx:id="TitulliColumn" layoutX="-1.0" prefHeight="51.0" prefWidth="900.0" style="-fx-background-color: green;">
                <children>
@@ -55,9 +55,9 @@
                         <Font size="27.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="fig1" fitHeight="39.0" fitWidth="49.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="photo1id" fx:id="fig1" fitHeight="49.0" fitWidth="62.0" layoutX="15.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@app/images/student-icon.png" />
+                        <Image url="@app/images/time-management_9606023.png" />
                      </image>
                   </ImageView>
                </children>
@@ -102,11 +102,6 @@
                   </InnerShadow>
                </effect>
             </TableView>
-            <ImageView fx:id="fig2" fitHeight="181.0" fitWidth="374.0" layoutX="449.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@app/images/school-icon.png" />
-               </image>
-            </ImageView>
             <Button fx:id="KerkoNxenesin" layoutX="25.0" layoutY="61.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="166.0" text="Kerko Nxenesin" textOverrun="LEADING_ELLIPSIS">
                <font>
                   <Font name="Arial" size="19.0" />
@@ -119,6 +114,11 @@
                   </InnerShadow>
                </effect>
             </Button>
+            <ImageView id="photo2" fx:id="fig2" fitHeight="219.0" fitWidth="412.0" layoutX="376.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@app/images/What-is-an-attendence-manangemnt-system.png" />
+               </image>
+            </ImageView>
          </children>
          <effect>
             <InnerShadow />
