@@ -20,6 +20,8 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import model.SessionManager;
+import model.User;
 
 public class LoginController implements Initializable {
     public TextField tname;
@@ -151,7 +153,10 @@ public class LoginController implements Initializable {
         ResultSet rs = null;
         Connection con = ConnexionDB.Connection();
         try {
-            st = con.prepareStatement("SELECT * FROM users WHERE USERNAME =?");
+            st = con.prepareStatement("SELECT u.user_id, u.username, u.password, u.salt " +
+                    "FROM users u " +
+                    "WHERE u.username = ?");
+
             st.setString(1, tname.getText());
             rs = st.executeQuery();
             if (rs.next()) {
@@ -161,6 +166,9 @@ public class LoginController implements Initializable {
                 // Generate the salted hash of the entered password using the stored salt
                 String enteredSaltedHash = SignUpController.PasswordHasher.generateSaltedHash(tpass.getText(), storedSalt);
                 if (storedSaltedHash.equals(enteredSaltedHash)) {
+                    User currentUser = new User(rs.getInt("user_id"), rs.getString("username"));
+
+                    SessionManager.getInstance().setCurrentUser(currentUser);
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/b.fxml"));
                     Parent root = loader.load();
 
@@ -169,11 +177,11 @@ public class LoginController implements Initializable {
                     stage.setScene(new Scene(root));
                     stage.show();
                 } else {
-                    Alert alert = new Alert(Alert.AlertType.WARNING, "Login error", ButtonType.OK);
+                    Alert alert = new Alert(Alert.AlertType.WARNING, "Invalid username or password", ButtonType.OK);
                     alert.show();
                 }
             } else {
-                Alert alert = new Alert(Alert.AlertType.WARNING, "Login error", ButtonType.OK);
+                Alert alert = new Alert(Alert.AlertType.WARNING, "User not found", ButtonType.OK);
                 alert.show();
             }
         } catch (SQLException | IOException e) {
