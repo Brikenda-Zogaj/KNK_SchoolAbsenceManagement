@@ -66,7 +66,7 @@ public class NxenesitController implements Initializable {
     @FXML
         void fshijTedhena(ActionEvent event) {
             int id = Integer.parseInt(idField.getText());
-            try (Connection conn = dc.Connect()) {
+            try (Connection conn = dc.getConnection()) {
                 String query = "DELETE FROM nxenesit WHERE id = ?";
                 PreparedStatement preparedStatement = conn.prepareStatement(query);
                 preparedStatement.setInt(1, id);
@@ -100,7 +100,7 @@ public class NxenesitController implements Initializable {
             String mbiemri = mbiemriField.getText();
             String email = emailField.getText();
 
-            try (Connection conn = dc.Connect()) {
+            try (Connection conn = dc.getConnection()) {
                 String query = "UPDATE nxenesit SET emri = ?, emri_prindit = ?, mbiemri = ?, email = ? WHERE id = ?";
                 PreparedStatement preparedStatement = conn.prepareStatement(query);
                 preparedStatement.setString(1, emri);
@@ -130,7 +130,7 @@ public class NxenesitController implements Initializable {
             String mbiemri = mbiemriField.getText();
             String email = emailField.getText();
 
-            try (Connection conn = dc.Connect()) {
+            try (Connection conn = dc.getConnection()) {
                 String query = "INSERT INTO nxenesit (emri, emri_prindit, mbiemri, email) VALUES (?, ?, ?, ?)";
                 PreparedStatement preparedStatement = conn.prepareStatement(query);
                 preparedStatement.setString(1, emri);
@@ -157,7 +157,7 @@ public class NxenesitController implements Initializable {
 
     private void loadData() {
         try {
-            Connection conn = dc.Connect();
+            Connection conn = dc.getConnection();
             data = FXCollections.observableArrayList();
             ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM nxenesit");
             while (rs.next()) {

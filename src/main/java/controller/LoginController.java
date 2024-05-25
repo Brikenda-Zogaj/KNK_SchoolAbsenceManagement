@@ -151,7 +151,7 @@ public class LoginController implements Initializable {
     public void login() {
         PreparedStatement st = null;
         ResultSet rs = null;
-        Connection con = ConnexionDB.Connection();
+        Connection con = ConnexionDB.getConnection();
         try {
             st = con.prepareStatement("SELECT u.user_id, u.username, u.password, u.salt " +
                     "FROM users u " +

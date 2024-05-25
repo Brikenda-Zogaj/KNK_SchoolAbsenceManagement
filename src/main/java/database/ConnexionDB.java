@@ -3,30 +3,31 @@ package database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public  class ConnexionDB {
-    public static Connection Connection() {
-        return null;
-    }
 
-    public Connection Connect(){
+public class ConnexionDB {
+
+    static String driver="com.mysql.cj.jdbc.Driver";
+
+    static String url = "jdbc:mysql://localhost:3308/projekti";
+    static String username = "gresah";
+    static   String password = "saythename17";
+
+
+
+    public static Connection getConnection(){
+        Connection connection=null;
         try {
-
-            String url = "jdbc:mysql://localhost:3308/projekti";
-            String username = "gresah";
-            String password = "saythename17";
-
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn= DriverManager.getConnection(url,username,password);
-            return conn;
+            Class.forName(driver);
+            try {
+                connection=DriverManager.getConnection(url, username, password);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
-        catch (ClassNotFoundException | SQLException ex){
-            Logger.getLogger(ConnexionDB.class.getName()).log(Level.SEVERE,null,ex);
-
-        }
-        return null;
-}
+        return connection;
+    }
 
 }

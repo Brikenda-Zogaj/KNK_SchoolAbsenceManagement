@@ -137,7 +137,7 @@ public class SignUpController implements Initializable {
             return;
         }
 
-        try (Connection con = ConnexionDB.Connection()) {
+        try (Connection con = ConnexionDB.getConnection()) {
             String salt = PasswordHasher.generateSalt();
             String saltedHash = PasswordHasher.generateSaltedHash(password, salt);
 
