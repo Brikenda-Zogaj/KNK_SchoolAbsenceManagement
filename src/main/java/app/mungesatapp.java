@@ -4,7 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class main extends Application{
+public class mungesatapp extends Application{
     @Override
     public void start(Stage stage) throws Exception{
         FXMLLoader loader=new FXMLLoader(getClass().getResource("/Fxml/LogIn.fxml"));
@@ -12,7 +12,7 @@ public class main extends Application{
         stage.setScene(scene);
         stage.show();
     }
-    public static void main(String[] args){
+    public static void mungesatapp(String[] args){
         launch();
     }
 }

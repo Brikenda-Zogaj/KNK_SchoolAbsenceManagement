@@ -74,10 +74,10 @@
                         <Image url="@../app/app/images/16111644.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="home" layoutX="52.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" scaleShape="false" style="-fx-background-color: none;" text="Home" wrapText="true" />
-                  <Button fx:id="mungesat" layoutX="57.0" layoutY="49.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: none;" text="Absences" textFill="#0d0d0d" />
-                  <Button fx:id="studentat" layoutX="58.0" layoutY="87.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" style="-fx-background-color: none;" text="Students" />
-                  <!--                  <Button fx:id="raportet" layoutX="61.0" layoutY="124.0" mnemonicParsing="false" onAction="#raportet" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: none;" text="Raportet" />-->
+                  <Button fx:id="home"  onAction="#home" layoutX="52.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" scaleShape="false" style="-fx-background-color: none;" text="Home" wrapText="true" />
+                  <Button fx:id="mungesat"   onAction="#Mungesat" layoutX="57.0" layoutY="49.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: none;" text="Absences" textFill="#0d0d0d" />
+                  <Button fx:id="studentatapp" onAction="#Studentat" layoutX="58.0" layoutY="87.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" style="-fx-background-color: none;" text="Students" />
+
                   <Button fx:id="profile" layoutX="60.0" layoutY="124.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="67.0" style="-fx-background-color: none;" text="Profile" />
                   <Line endX="109.39999389648438" endY="1.1444091796875E-5" layoutX="70.0" layoutY="45.0" opacity="0.3" startX="-66.09999084472656" startY="1.1444091796875E-5" stroke="#705380" />
                   <Line endX="109.39999389648438" endY="1.1444091796875E-5" layoutX="70.0" layoutY="79.0" opacity="0.3" startX="-66.09999084472656" startY="1.1444091796875E-5" stroke="#705380" />

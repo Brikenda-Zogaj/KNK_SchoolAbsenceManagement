@@ -1,8 +1,6 @@
 package controller;
 
-import app.diagramiklasave;
-import app.diagramimungesave;
-import app.main;
+import app.*;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,7 +33,7 @@ public class maincontroller implements Initializable {
     public Button profile;
     public Button home;
     public Button mungesat;
-    public Button studentat;
+    public Button studentatapp;
 
 
     public Button student;
@@ -44,6 +42,8 @@ public class maincontroller implements Initializable {
 
     @FXML
     private ImageView Exit;
+//    @FXML
+//    private Button home;
 
     @FXML
     private Label Menu;
@@ -69,6 +69,33 @@ public class maincontroller implements Initializable {
     private Label absence1;
     @FXML
     private Label klasa1;
+    @FXML
+    void home(ActionEvent event) throws Exception {
+
+        home.getScene().getWindow().hide();
+
+
+        Stage primaryStage = new Stage();
+        main mainWindow = new main();
+        mainWindow.start(primaryStage);
+    }
+    @FXML
+    void Mungesat(ActionEvent event) throws Exception {
+        mungesat.getScene().getWindow().hide();
+
+        Stage primaryStage = new Stage();
+        mungesatapp mungesatWindow = new mungesatapp();
+        mungesatWindow.start(primaryStage);
+    }
+    @FXML
+    void Studentat(ActionEvent event) throws Exception {
+        studentatapp.getScene().getWindow().hide();
+
+        Stage primaryStage = new Stage();
+        studentatapp studentatappWindow = new studentatapp();
+        studentatappWindow.start(primaryStage);
+    }
+
 
     @FXML
     void absence(ActionEvent event) throws Exception {
@@ -157,8 +184,8 @@ public class maincontroller implements Initializable {
                 home.fire();
             } else if (mungesat.isFocused()) {
                 mungesat.fire();
-            } else if (studentat.isFocused()) {
-                studentat.fire();
+            } else if (studentatapp.isFocused()) {
+                studentatapp.fire();
             }
         } else if (event.getCode() == KeyCode.TAB) {
             if (event.isShiftDown()) {
@@ -172,8 +199,8 @@ public class maincontroller implements Initializable {
 
     private void focusNext() {
         if (home.isFocused()) {
-            studentat.requestFocus();
-        } else if (studentat.isFocused()) {
+            studentatapp.requestFocus();
+        } else if (studentatapp.isFocused()) {
             mungesat.requestFocus();
         } else if (mungesat.isFocused()) {
             profile.requestFocus();
@@ -195,10 +222,10 @@ public class maincontroller implements Initializable {
     private void focusPrevious() {
         if (home.isFocused()) {
             en.requestFocus();
-        } else if (studentat.isFocused()) {
+        } else if (studentatapp.isFocused()) {
             home.requestFocus();
         } else if (mungesat.isFocused()) {
-            studentat.requestFocus();
+            studentatapp.requestFocus();
         } else if (profile.isFocused()) {
             mungesat.requestFocus();
         } else if (student.isFocused()) {
@@ -247,7 +274,7 @@ public class maincontroller implements Initializable {
                 Locale currentLocale = new Locale("sq", "AL");
                 ResourceBundle bundle = ResourceBundle.getBundle("translations.AL_SQ", currentLocale);
                 home.setText(bundle.getString("home.button.text"));
-                studentat.setText(bundle.getString("studentat.button.text"));
+                studentatapp.setText(bundle.getString("studentat.button.text"));
                 mungesat.setText(bundle.getString("mungesat.button.text"));
                 profile.setText(bundle.getString("profile.button.text"));
                 m.setText(bundle.getString("mm.label"));
@@ -260,7 +287,7 @@ public class maincontroller implements Initializable {
                 Locale currentLocale = new Locale("en", "US");
                 ResourceBundle bundle = ResourceBundle.getBundle("translations.US_EN", currentLocale);
                 home.setText(bundle.getString("home.button.text"));
-                studentat.setText(bundle.getString("studentat.button.text"));
+                studentatapp.setText(bundle.getString("studentat.button.text"));
                 mungesat.setText(bundle.getString("mungesat.button.text"));
                 profile.setText(bundle.getString("profile.button.text"));
                 m.setText(bundle.getString("mm.label"));
@@ -276,8 +303,6 @@ public class maincontroller implements Initializable {
     }
 
 
-    public void Studentat(ActionEvent event) {
 
-    }
 
 }
