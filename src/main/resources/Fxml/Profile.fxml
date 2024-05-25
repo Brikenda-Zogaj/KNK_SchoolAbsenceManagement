@@ -22,7 +22,7 @@
                         <Image url="@../../../../../../../Pictures/Screenshots/profile.png" />
                     </image>
                 </ImageView>
-                <Label alignment="CENTER" layoutX="38.0" layoutY="196.0" prefHeight="17.0" prefWidth="168.0" text="Emri Mbiemri" textFill="WHITE">
+                <Label fx:id="emri" alignment="CENTER" layoutX="38.0" layoutY="196.0" prefHeight="17.0" prefWidth="168.0" text="Emri Mbiemri" textFill="WHITE">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -90,12 +90,12 @@
             </children>
         </Pane>
         <Line endX="-99.99996948242188" endY="385.0" layoutX="360.0" layoutY="215.0" startX="-99.99996948242188" startY="-215.0" stroke="GREEN" />
-        <Label layoutX="289.0" layoutY="33.0" prefHeight="27.0" prefWidth="168.0" text="Profile Settings">
+        <Label layoutX="284.0" layoutY="14.0" prefHeight="27.0" prefWidth="168.0" text="Profile Settings">
             <font>
                 <Font size="24.0" />
             </font>
         </Label>
-        <VBox layoutX="293.0" layoutY="79.0" prefHeight="194.0" prefWidth="444.0" spacing="30.0">
+        <VBox layoutX="284.0" layoutY="49.0" prefHeight="285.0" prefWidth="444.0" spacing="30.0">
             <children>
                 <Label prefHeight="27.0" prefWidth="168.0" text="Profile details">
                     <font>
@@ -104,7 +104,35 @@
                 </Label>
                 <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="444.0">
                     <children>
-                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="96.0" stylesheets="@../app/Style.css" text="First Name">
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="122.0" stylesheets="@../app/Style.css" text="Current Username">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Pane prefHeight="26.0" prefWidth="323.0" stylesheets="@../app/Style.css">
+                            <children>
+                                <TextField fx:id="cUsername" layoutX="11.0" prefHeight="25.0" prefWidth="282.0" />
+                            </children>
+                        </Pane>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="37.0" prefHeight="26.0" prefWidth="444.0">
+                    <children>
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="122.0" stylesheets="@../app/Style.css" text="New Username">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Pane prefHeight="26.0" prefWidth="323.0" stylesheets="@../app/Style.css">
+                            <children>
+                                <TextField fx:id="nUsername" layoutX="11.0" prefHeight="25.0" prefWidth="282.0" />
+                            </children>
+                        </Pane>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="63.0" prefHeight="26.0" prefWidth="444.0">
+                    <children>
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="122.0" stylesheets="@../app/Style.css" text="First Name">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -116,9 +144,9 @@
                         </Pane>
                     </children>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="37.0" prefHeight="26.0" prefWidth="444.0">
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="179.0" prefHeight="26.0" prefWidth="444.0">
                     <children>
-                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="96.0" stylesheets="@../app/Style.css" text="Last Name">
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="122.0" stylesheets="@../app/Style.css" text="Last Name">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -130,9 +158,9 @@
                         </Pane>
                     </children>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="63.0" prefHeight="26.0" prefWidth="444.0">
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="235.0" prefHeight="26.0" prefWidth="444.0">
                     <children>
-                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="96.0" stylesheets="@../app/Style.css" text="Subject">
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="122.0" stylesheets="@../app/Style.css" text="Subject">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -146,7 +174,7 @@
                 </HBox>
             </children>
         </VBox>
-        <VBox layoutX="293.0" layoutY="300.0" prefHeight="194.0" prefWidth="444.0" spacing="30.0">
+        <VBox layoutX="294.0" layoutY="375.0" prefHeight="165.0" prefWidth="444.0" spacing="30.0">
             <children>
                 <Label prefHeight="27.0" prefWidth="168.0" text="Contatct Info">
                     <font>
@@ -155,7 +183,7 @@
                 </Label>
                 <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="444.0">
                     <children>
-                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="96.0" stylesheets="@../app/Style.css" text="Email">
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="122.0" stylesheets="@../app/Style.css" text="Email">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -169,7 +197,7 @@
                 </HBox>
                 <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="37.0" prefHeight="26.0" prefWidth="444.0">
                     <children>
-                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="96.0" stylesheets="@../app/Style.css" text="Phone ">
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="122.0" stylesheets="@../app/Style.css" text="Phone ">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -183,7 +211,7 @@
                 </HBox>
             </children>
         </VBox>
-        <Button fx:id="saveEditId" layoutX="477.0" layoutY="500.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="155.0" style="-fx-background-color: green;" text="Save Changes" textFill="WHITE" textOverrun="CLIP">
+        <Button fx:id="saveEditId" layoutX="566.0" layoutY="540.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="155.0" style="-fx-background-color: green;" text="Save Changes" textFill="WHITE" textOverrun="CLIP">
             <font>
                 <Font size="14.0" />
             </font>
