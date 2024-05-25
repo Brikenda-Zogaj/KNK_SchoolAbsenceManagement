@@ -8,7 +8,11 @@ module org.example.projekti {
 
 
     opens app to javafx.fxml;
+
     exports app;
+    exports Classes;
     exports controller;
-    opens controller;
+    opens controller to javafx.fxml;
+    opens Classes to javafx.fxml;
+
 }
