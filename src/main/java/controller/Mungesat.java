@@ -88,7 +88,7 @@ public class Mungesat {
 
     private void loadAllNxenesit() {
         String sql = "SELECT id, emri, emriPrindit, mbiemri FROM nxenesit";
-        try (Connection conn = ConnexionDB.Connect();
+        try (Connection conn = ConnexionDB.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
 
@@ -110,7 +110,7 @@ public class Mungesat {
 
     private void loadNxenesitByClass(String className) {
         String sql = "SELECT * FROM nxenesit WHERE klasa = ?";
-        try (Connection conn = ConnexionDB.Connect();
+        try (Connection conn = ConnexionDB.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, className);
             try (ResultSet rs = pstmt.executeQuery()) {
@@ -159,7 +159,7 @@ public class Mungesat {
 
     @FXML
     private void onClick(ActionEvent event) {
-        // Add your button click logic here
+
         System.out.println("Button clicked!");
     }
 }
