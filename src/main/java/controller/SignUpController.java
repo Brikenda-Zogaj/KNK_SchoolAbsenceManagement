@@ -9,6 +9,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import model.SessionManager;
+import model.User;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -123,51 +125,44 @@ public class SignUpController implements Initializable {
     }
 
     private void signUp() {
-        Connection con = null;
-        boolean signUpSuccess = false;
-        PreparedStatement insertStmt = null;
-        try {
-            String firstName = fname.getText();
-            String lastName = lname.getText();
-            String username = tname.getText();
-            String password = tpass.getText();
-            String subject = tsubject.getValue();
+        String firstName = fname.getText();
+        String lastName = lname.getText();
+        String username = tname.getText();
+        String password = tpass.getText();
+        String subject = tsubject.getValue();
 
-            // Validation
-            if (firstName.isEmpty() || lastName.isEmpty() || username.isEmpty() || password.isEmpty() || subject == null) {
-                Alert alert = new Alert(Alert.AlertType.WARNING, "Please fill all fields", ButtonType.OK);
-                alert.show();
-                return;
-            }
+        if (firstName.isEmpty() || lastName.isEmpty() || username.isEmpty() || password.isEmpty() || subject == null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Please fill all fields", ButtonType.OK);
+            alert.show();
+            return;
+        }
 
-            con = ConnexionDB.Connection();
-
-            // Generate salt and salted hash
+        try (Connection con = ConnexionDB.Connection()) {
             String salt = PasswordHasher.generateSalt();
             String saltedHash = PasswordHasher.generateSaltedHash(password, salt);
 
-            // Inserting into signup_users
-            PreparedStatement st = con.prepareStatement("INSERT INTO signup_users (first_name, last_name, username, password, salt, subject) VALUES (?, ?, ?, ?, ?, ?)");
-            st.setString(1, firstName);
-            st.setString(2, lastName);
-            st.setString(3, username);
-            st.setString(4, saltedHash);
-            st.setString(5, salt);
-            st.setString(6, subject);
-            st.executeUpdate();
-            st.close();
-            signUpSuccess = true;
+            String insertUserSQL = "INSERT INTO signup_users (first_name, last_name, username, password, salt, subject) VALUES (?, ?, ?, ?, ?, ?)";
+            try (PreparedStatement st = con.prepareStatement(insertUserSQL)) {
+                st.setString(1, firstName);
+                st.setString(2, lastName);
+                st.setString(3, username);
+                st.setString(4, saltedHash);
+                st.setString(5, salt);
+                st.setString(6, subject);
+                st.executeUpdate();
+            }
 
-            // Transfer data to users table
-            insertStmt = con.prepareStatement("INSERT INTO users (username, password, salt) SELECT username, password, salt FROM signup_users WHERE username = ?");
-            insertStmt.setString(1, username);
-            insertStmt.executeUpdate();
-            insertStmt.close();
+            String transferUserSQL = "INSERT INTO users (username, password, salt) SELECT username, password, salt FROM signup_users WHERE username = ?";
+            try (PreparedStatement st = con.prepareStatement(transferUserSQL)) {
+                st.setString(1, username);
+                st.executeUpdate();
+            }
+
+            User newUser = new User(0, username, firstName, lastName, subject);
+            SessionManager.getInstance().setCurrentUser(newUser);
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/b.fxml"));
             Parent root = loader.load();
-
-            // Get the stage from the button and set the new scene
             Stage stage = (Stage) btnsig.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
@@ -176,35 +171,14 @@ public class SignUpController implements Initializable {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Sign-Up Failed: " + e.getMessage(), ButtonType.OK);
             alert.show();
-            signUpSuccess = false;
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-            // Close resources
-            if (insertStmt != null) {
-                try {
-                    insertStmt.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (con != null) {
-                try {
-                    if (!signUpSuccess) {
-                        // Delete records from signup_users table
-                        PreparedStatement cleanStmt = con.prepareStatement("DELETE FROM signup_users WHERE username = ?");
-                        cleanStmt.setString(1, tname.getText());
-                        cleanStmt.executeUpdate();
-                        cleanStmt.close();
-                    }
-                    con.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to load next scene: " + e.getMessage(), ButtonType.OK);
+            alert.show();
         }
     }
-    @FXML
+
+@FXML
     void signupaction(ActionEvent event) {
         handleLogin();
     }
