@@ -1,6 +1,7 @@
 package controller;
 
 import database.ConnexionDB;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,7 +13,6 @@ import javafx.stage.Stage;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.sql.ResultSet;
 import java.util.Base64;
 
 import java.io.IOException;
@@ -20,11 +20,17 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class SignUpController implements Initializable {
 
     public Button btncon1;
+
+    @FXML
+    private RadioButton al;
+    @FXML
+    private RadioButton en;
     @FXML
     private TextField fname;
     @FXML
@@ -37,9 +43,23 @@ public class SignUpController implements Initializable {
     private ComboBox<String> tsubject;
     @FXML
     private Button btnsig;
+    @FXML
+    private Label signup;
+    @FXML
+    private Label firstname;
+
+    @FXML
+    private Label lastname;
+    @FXML
+    private Label username;
+    @FXML
+    private Label pass;
+    @FXML
+    private Label account;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        changeLanguage();
         btnsig.setOnAction(actionEvent -> signUp());
         btncon1.setOnAction(actionEvent -> direct2());
     }
@@ -120,7 +140,7 @@ public class SignUpController implements Initializable {
                 return;
             }
 
-            con = ConnexionDB.getConnection();
+            con = ConnexionDB.Connection();
 
             // Generate salt and salted hash
             String salt = PasswordHasher.generateSalt();
@@ -184,4 +204,45 @@ public class SignUpController implements Initializable {
             }
         }
     }
+    @FXML
+    void signupaction(ActionEvent event) {
+        handleLogin();
+    }
+
+    private void handleLogin() {
+        // Placeholder method
+    }
+    public void changeLanguage() {
+        ToggleGroup languageToggleGroup = new ToggleGroup();
+        al.setToggleGroup(languageToggleGroup);
+        en.setToggleGroup(languageToggleGroup);
+        languageToggleGroup.selectedToggleProperty().addListener((observable, oldToggle, newToggle) -> {
+            if (newToggle == al){
+                Locale currentLocale = new Locale("sq", "AL");
+                ResourceBundle bundle = ResourceBundle.getBundle("translations.AL_SQ", currentLocale);
+                signup.setText(bundle.getString("signup.label"));
+                firstname.setText(bundle.getString("firstname.text"));
+                lastname.setText(bundle.getString("lastname.label"));
+                username.setText(bundle.getString("usern.label"));
+                pass.setText(bundle.getString("pass.label"));
+                btnsig.setText(bundle.getString("btnsig.button.text"));
+                account.setText(bundle.getString("account.label"));
+                btncon1.setText(bundle.getString("btncon1.button.text"));
+
+            } else if (newToggle == en){
+                Locale currentLocale = new Locale("en", "US");
+                ResourceBundle bundle = ResourceBundle.getBundle("translations.US_EN", currentLocale);
+                signup.setText(bundle.getString("signup.label"));
+                firstname.setText(bundle.getString("firstname.text"));
+                lastname.setText(bundle.getString("lastname.label"));
+                username.setText(bundle.getString("username.label"));
+                pass.setText(bundle.getString("pass.label"));
+                btnsig.setText(bundle.getString("signup.button.text"));
+                account.setText(bundle.getString("account.label"));
+                btncon1.setText(bundle.getString("btncon1.button.text"));
+            }
+
+        });
+        languageToggleGroup.selectToggle(al);
+        }
 }

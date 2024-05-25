@@ -18,6 +18,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 public class LoginController implements Initializable {
     public TextField tname;
@@ -42,6 +44,62 @@ public class LoginController implements Initializable {
         changeLanguage();
         btncon.setOnAction(actionEvent -> login());
         btnsig1.setOnAction(actionEvent -> direct());
+
+        btncon.sceneProperty().addListener((observable, oldScene, newScene) -> {
+            if (newScene != null) {
+                newScene.addEventFilter(KeyEvent.KEY_PRESSED, event -> handleKeyPress(event));
+            }
+        });
+    }
+
+    private void handleKeyPress(KeyEvent event) {
+        if (event.getCode() == KeyCode.ENTER) {
+            if (btncon.isFocused()) {
+                login();
+            } else if (btnsig1.isFocused()) {
+                direct();
+            }
+        } else if (event.getCode() == KeyCode.TAB) {
+            if (event.isShiftDown()) {
+                focusPrevious();
+            } else {
+                focusNext();
+            }
+            event.consume();
+        }
+    }
+
+    private void focusNext() {
+        if (tname.isFocused()) {
+            tpass.requestFocus();
+        } else if (tpass.isFocused()) {
+            btncon.requestFocus();
+        } else if (btncon.isFocused()) {
+            btnsig1.requestFocus();
+        } else if (btnsig1.isFocused()) {
+            alButton.requestFocus();
+        } else if (alButton.isFocused()) {
+            enButton.requestFocus();
+        } else if (enButton.isFocused()) {
+            tname.requestFocus();
+        }
+    }
+
+    private void focusPrevious() {
+        if (tname.isFocused()) {
+            enButton.requestFocus();
+        } else if (tpass.isFocused()) {
+            tname.requestFocus();
+        } else if (btncon.isFocused()) {
+            tpass.requestFocus();
+        } else if (btnsig1.isFocused()) {
+            btncon.requestFocus();
+        } else if (alButton.isFocused()) {
+            btnsig1.requestFocus();
+        } else if (enButton.isFocused()) {
+            alButton.requestFocus();
+        }
+
     }
 
     @FXML
@@ -91,7 +149,7 @@ public class LoginController implements Initializable {
     public void login() {
         PreparedStatement st = null;
         ResultSet rs = null;
-        Connection con = ConnexionDB.getConnection();
+        Connection con = ConnexionDB.Connection();
         try {
             st = con.prepareStatement("SELECT * FROM users WHERE USERNAME =?");
             st.setString(1, tname.getText());

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nxenesit.NxenesitController">
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NxenesitController">
     <children>
         <!-- Paneli kryesor -->
         <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: green;">

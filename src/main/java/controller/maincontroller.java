@@ -17,6 +17,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 import javafx.stage.Stage;
@@ -75,8 +77,8 @@ public class maincontroller implements Initializable {
 
         // Krijo një dritare të re për klasën diagramimungesave
         Stage primaryStage = new Stage();
-        diagramimungesave diagramimungesaveWindow = new diagramimungesave(); // Krijo objektin e klases diagramimungesave
-        diagramimungesaveWindow.start(primaryStage); // Thirr metoden start në objektin e klases diagramimungesave
+        diagramimungesave diagramimungesaveWindow = new diagramimungesave();
+        diagramimungesaveWindow.start(primaryStage);
     }
     @FXML
     void klasa(ActionEvent event) throws Exception{
@@ -95,6 +97,7 @@ public class maincontroller implements Initializable {
 
         Exit.setOnMouseClicked(event -> {
             System.exit(0);
+
         });
         slider.setTranslateX(-176);
         Menu.setOnMouseClicked(event -> {
@@ -107,7 +110,7 @@ public class maincontroller implements Initializable {
 
             slider.setTranslateX(-176);
 
-            slide.setOnFinished((ActionEvent e)-> {
+            slide.setOnFinished((ActionEvent e) -> {
                 Menu.setVisible(false);
                 MenuClose.setVisible(true);
             });
@@ -123,13 +126,95 @@ public class maincontroller implements Initializable {
 
             slider.setTranslateX(0);
 
-            slide.setOnFinished((ActionEvent e)-> {
+            slide.setOnFinished((ActionEvent e) -> {
                 Menu.setVisible(true);
                 MenuClose.setVisible(false);
             });
         });
-
+        profile.sceneProperty().addListener((observable, oldScene, newScene) -> {
+            if (newScene != null) {
+                newScene.addEventFilter(KeyEvent.KEY_PRESSED, event -> handleKeyPress(event));
+            }
+        });
     }
+    private void handleKeyPress(KeyEvent event) {
+        if (event.getCode() == KeyCode.ENTER) {
+            if (profile.isFocused()) {
+                direct3();
+            } else if (absence.isFocused()) {
+                try {
+                    absence(new ActionEvent());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else if (klasa.isFocused()) {
+                try {
+                    klasa(new ActionEvent());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else if (home.isFocused()) {
+                home.fire();
+            } else if (mungesat.isFocused()) {
+                mungesat.fire();
+            } else if (studentat.isFocused()) {
+                studentat.fire();
+            }
+        } else if (event.getCode() == KeyCode.TAB) {
+            if (event.isShiftDown()) {
+                focusPrevious();
+            } else {
+                focusNext();
+            }
+            event.consume();
+        }
+    }
+
+    private void focusNext() {
+        if (home.isFocused()) {
+            studentat.requestFocus();
+        } else if (studentat.isFocused()) {
+            mungesat.requestFocus();
+        } else if (mungesat.isFocused()) {
+            profile.requestFocus();
+        } else if (profile.isFocused()) {
+            student.requestFocus();
+        } else if (student.isFocused()) {
+            absence.requestFocus();
+        } else if (absence.isFocused()) {
+            klasa.requestFocus();
+        } else if (klasa.isFocused()) {
+            al.requestFocus();
+        } else if (al.isFocused()) {
+            en.requestFocus();
+        } else if (en.isFocused()) {
+            home.requestFocus();
+        }
+    }
+
+    private void focusPrevious() {
+        if (home.isFocused()) {
+            en.requestFocus();
+        } else if (studentat.isFocused()) {
+            home.requestFocus();
+        } else if (mungesat.isFocused()) {
+            studentat.requestFocus();
+        } else if (profile.isFocused()) {
+            mungesat.requestFocus();
+        } else if (student.isFocused()) {
+            profile.requestFocus();
+        } else if (absence.isFocused()) {
+            student.requestFocus();
+        } else if (klasa.isFocused()) {
+            absence.requestFocus();
+        } else if (al.isFocused()) {
+            klasa.requestFocus();
+        } else if (en.isFocused()) {
+            al.requestFocus();
+        }
+    }
+
+
     public void direct3() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Profile.fxml"));
         Parent root = null;
@@ -139,7 +224,7 @@ public class maincontroller implements Initializable {
             throw new RuntimeException(e);
         }
 
-        // Get the stage from the button and set the new scene
+
         Stage stage = (Stage) profile.getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
@@ -190,8 +275,9 @@ public class maincontroller implements Initializable {
         languageToggleGroup.selectToggle(al);
     }
 
+
     public void Studentat(ActionEvent event) {
-        // Your code here
+
     }
 
 }
