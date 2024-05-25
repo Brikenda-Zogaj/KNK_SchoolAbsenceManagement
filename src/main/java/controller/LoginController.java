@@ -84,7 +84,7 @@ public class LoginController implements Initializable {
             }
         });
 
-        // Vendos gjuhën fillestare si Shqip
+        // Vendosa gjuhën fillestare si Shqip
         languageToggleGroup.selectToggle(alButton);
     }
 

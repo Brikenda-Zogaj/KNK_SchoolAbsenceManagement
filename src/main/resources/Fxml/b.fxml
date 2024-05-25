@@ -6,256 +6,19 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.maincontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.maincontroller">
    <children>
-      <Label layoutX="184.0" layoutY="83.0" text="Mirë se vini në Sistemin për Menaxhimin e Mungesave">
+      <Label fx:id="m" layoutX="184.0" layoutY="83.0" prefHeight="39.0" prefWidth="374.0" text="&quot;Hamdi Berisha&quot; high school">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Pane fx:id="pane1" layoutX="190.0" layoutY="151.0" prefHeight="162.0" prefWidth="250.0" styleClass="pane1" stylesheets="@Style.css">
-         <children>
-            <ImageView fx:id="photo1" fitHeight="122.0" fitWidth="106.0" layoutX="132.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" styleClass="photo1">
-               <image>
-                  <Image url="@app/images/8262066.jpg" />
-               </image>
-            </ImageView>
-            <Label layoutX="14.0" layoutY="15.0" prefHeight="17.0" prefWidth="200.0" text="Kjo platformë është ndërtuar  për të">
-               <font>
-                  <Font name="System Italic" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="14.0" layoutY="32.0" text="ndihmuar në regjistrimin dhe  ">
-               <font>
-                  <Font name="System Italic" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="14.0" layoutY="49.0" text="monitorimin e mungesave">
-               <font>
-                  <Font name="System Italic" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="12.0" layoutY="66.0" text="të nxënësve në një">
-               <font>
-                  <Font name="System Italic" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="14.0" layoutY="83.0" text="mënyrë të lehtë dhe ">
-               <font>
-                  <Font name="System Italic" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="14.0" layoutY="102.0" text="dhe të efikase.">
-               <font>
-                  <Font name="System Italic" size="12.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Pane fx:id="pane2" layoutX="453.0" layoutY="151.0" prefHeight="162.0" prefWidth="94.0" styleClass="pane2" stylesheets="@Style.css">
-         <children>
-            <Label layoutX="4.0" layoutY="106.0" prefHeight="17.0" prefWidth="118.0" text="i studenteve" textFill="#fcfafa">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="5.0" layoutY="127.0" text="të regjistruar" textFill="#f7f5f5">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="4.0" layoutY="26.0" prefHeight="45.0" prefWidth="66.0" text="400" textFill="#fffcfc">
-               <font>
-                  <Font name="Century Gothic Bold" size="35.0" />
-               </font>
-            </Label>
-            <Label layoutX="4.0" layoutY="86.0" text="Numri" textFill="#fcf9f9">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Pane fx:id="pane21" layoutX="560.0" layoutY="151.0" prefHeight="162.0" prefWidth="94.0" styleClass="pane21" stylesheets="@Style.css">
-         <children>
-            <Label layoutX="8.0" layoutY="88.0" text="Numri " textFill="#fcfafa">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="4.0" layoutY="128.0" text="i mungesave" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="14.0" layoutY="25.0" prefHeight="45.0" prefWidth="66.0" text="50" textFill="#fffcfc">
-               <font>
-                  <Font name="Century Gothic Bold" size="35.0" />
-               </font>
-            </Label>
-            <Label layoutX="8.0" layoutY="108.0" text="total" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Pane fx:id="pane22" layoutX="667.0" layoutY="151.0" prefHeight="162.0" prefWidth="94.0" styleClass="pane22" stylesheets="@Style.css">
-         <children>
-            <Label layoutX="6.0" layoutY="92.0" text="Mesatarja " textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="6.0" layoutY="112.0" text="e mungesave" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="13.0" layoutY="132.0" text="për nxënës" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="14.0" layoutY="26.0" prefHeight="45.0" prefWidth="66.0" text="50" textFill="#fffcfc">
-               <font>
-                  <Font name="Century Gothic Bold" size="35.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Label layoutX="190.0" layoutY="121.0" text="Platforma">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="488.0" layoutY="95.0" />
-      <Label layoutX="459.0" layoutY="121.0" text="Të dhëna të përgjithshme">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="189.0" layoutY="322.0" text="Ngjarje të ardhshme">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <ScrollPane layoutX="184.0" layoutY="340.0" prefHeight="62.0" prefWidth="607.0">
-         <content>
-            <GridPane prefHeight="91.0" prefWidth="589.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Pane fx:id="scrollpane" prefHeight="46.0" prefWidth="228.0" styleClass="scrollpane" stylesheets="@Style.css">
-                     <children>
-                        <Label layoutX="37.0" layoutY="7.0" text="Fitër Bajrami(10 prill)">
-                           <font>
-                              <Font size="10.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="scrollpane" stylesheets="@Style.css" GridPane.columnIndex="1">
-                     <children>
-                        <Label layoutX="20.0" layoutY="9.0" text="Dita ndërkombëtare e Punës(1 maj)">
-                           <font>
-                              <Font size="10.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="scrollpane" stylesheets="@Style.css" GridPane.columnIndex="2">
-                     <children>
-                        <Label layoutX="29.0" layoutY="7.0" text="Pashkët Ortodokse(6 maj pushim)">
-                           <font>
-                              <Font size="10.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="scrollpane" stylesheets="@Style.css" GridPane.rowIndex="1">
-                     <children>
-                        <Label layoutX="29.0" layoutY="7.0" text="Dita e Evropës(9 maj)">
-                           <font>
-                              <Font size="10.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="scrollpane" stylesheets="@Style.css" GridPane.rowIndex="2">
-                     <children>
-                        <Label layoutX="36.0" layoutY="4.0" text="Dita e Paqes(12 qeshor)" />
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="scrollpane" stylesheets="@Style.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <children>
-                        <Label layoutY="8.0" text="Përfundimi i vitit shkollor për 12-tat (16 maj)">
-                           <font>
-                              <Font size="10.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="scrollpane" stylesheets="@Style.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <children>
-                        <Label layoutX="4.0" layoutY="9.0" text="Përfundimi i vitit shkollor për kl. 9,10 dhe 11(6 qeshor)">
-                           <font>
-                              <Font size="8.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="scrollpane" stylesheets="@Style.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <children>
-                        <Label layoutX="28.0" layoutY="3.0" text="Kurban Bajrami(16 qeshor)" />
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="scrollpane" stylesheets="@Style.css" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                     <children>
-                        <Label layoutY="4.0" text="Perfundimi i vitit shkollor për kl 1-8(24 qeshor)">
-                           <font>
-                              <Font size="8.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-               </children>
-            </GridPane>
-         </content>
-      </ScrollPane>
-      <Label layoutX="184.0" layoutY="422.0" text="Pyetje të shpeshta">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="190.0" layoutY="458.0" text=" Hyni në llogarinë tuaj, zgjidhni seksionin për menaxhimin e mungesave, dhe shtoni një mungesë të re duke " />
-      <Label layoutX="196.0" layoutY="476.0" text="përfshirë informacionin e nevojshëm për nxënësin dhe arsyen e mungesës." />
-      <Label layoutX="184.0" layoutY="440.0" text="Si mund të regjistroj mungesat për nxënësit në platformë?">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="184.0" layoutY="504.0" text="A mund të shoh ngjarjet e ardhshme në platformë?">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="196.0" layoutY="522.0" text="Po, në seksionin për ngjarjet e ardhshme, mund të gjeni informacion rreth pushimeve shkollore, ditëve festive, " />
-      <Label layoutX="197.0" layoutY="540.0" text="dhe aktiviteteve të tjera të planifikuara në shkollë." />
-      <AnchorPane layoutX="823.0" layoutY="73.0" prefHeight="453.0" prefWidth="616.0" />
+      <AnchorPane layoutX="835.0" layoutY="62.0" prefHeight="453.0" prefWidth="616.0" />
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="1.599999999999909" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <AnchorPane prefHeight="35.0" prefWidth="600.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane layoutX="167.0" layoutY="20.0" prefHeight="43.0" prefWidth="600.0" style="-fx-background-color: #FFDB58;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Pane prefHeight="43.0" prefWidth="600.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Label fx:id="MenuClose" layoutX="1.0" layoutY="-1.0" prefHeight="38.0" prefWidth="26.0" text="≡">
                            <font>
@@ -267,33 +30,29 @@
                               <Font size="26.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="32.0" fitWidth="22.0" layoutX="715.0" layoutY="11.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" styleClass="menuItem">
+                        <ImageView fitHeight="32.0" fitWidth="22.0" layoutX="756.0" layoutY="12.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" styleClass="menuItem">
                            <image>
-                              <Image url="@app/images/1246334.png" />
+                              <Image url="@../app/app/images/16111644.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="22.0" fitWidth="52.0" layoutX="757.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" styleClass="menuItem">
-                           <image>
-                              <Image url="@app/images/16111644.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="247.0" layoutY="1.0" prefHeight="43.0" prefWidth="290.0" text="Student Absences Managment">
+                        <Label fx:id="titulli" layoutX="247.0" layoutY="1.0" prefHeight="43.0" prefWidth="386.0" text="Student Absences Managment">
                            <font>
                               <Font name="Yu Gothic Medium" size="20.0" />
                            </font>
                         </Label>
                         <ImageView fitHeight="45.0" fitWidth="43.0" layoutX="196.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@app/images/263115.png" />
+                              <Image url="@../app/app/images/download.png" />
                            </image>
                         </ImageView>
+
                      </children>
                   </Pane>
                </children>
             </AnchorPane>
          </top>
          <left>
-            <AnchorPane fx:id="slider" prefHeight="518.0" prefWidth="182.0" style="-fx-border-color: #FFDB58;" styleClass="sidebarItem" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="slider" prefHeight="518.0" prefWidth="182.0" style="-fx-background-color: lightgreen; " styleClass="sidebarItem" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fx:id="Exit" fitHeight="22.0" fitWidth="22.0" layoutX="23.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -302,36 +61,90 @@
                   </ImageView>
                   <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="24.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@app/images/9948629.png" />
+                        <Image url="@../app/app/images/9948629.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="27.0" fitWidth="22.0" layoutX="24.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@app/images/3135773.png" />
+                        <Image url="@../app/app/images/3135773.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="22.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@app/images/15054109.png" />
+                        <Image url="@../app/app/images/16111644.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="49.0" fitWidth="22.0" layoutX="24.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@app/images/16111644.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="52.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" scaleShape="false" style="-fx-background-color: none;" text="Home" wrapText="true" />
-                  <Button layoutX="57.0" layoutY="49.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: none;" text="Mungesat" textFill="#0d0d0d" />
-                  <Button layoutX="58.0" layoutY="87.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" style="-fx-background-color: none;" text="Studentat" />
-                  <Button fx:id="raportet" layoutX="61.0" layoutY="124.0" mnemonicParsing="false" onAction="#raportet" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: none;" text="Raportet" />
-                  <Button fx:id="profileId" layoutX="64.0" layoutY="164.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="46.0" style="-fx-background-color: none;" text="Profili" />
-                  <Line endX="109.39999389648438" endY="1.1444091796875E-5" layoutX="70.0" layoutY="45.0" opacity="0.3" startX="-66.09999084472656" startY="1.1444091796875E-5" stroke="#ffdb58" />
-                  <Line endX="109.39999389648438" endY="1.1444091796875E-5" layoutX="70.0" layoutY="79.0" opacity="0.3" startX="-66.09999084472656" startY="1.1444091796875E-5" stroke="#ffdb58" />
-                  <Line endX="109.39999389648438" endY="1.1444091796875E-5" layoutX="70.0" layoutY="121.0" opacity="0.3" startX="-66.09999084472656" startY="1.1444091796875E-5" stroke="#ffdb58" />
-                  <Line endX="109.39999389648438" endY="1.1444091796875E-5" layoutX="69.0" layoutY="155.0" opacity="0.3" startX="-66.09999084472656" startY="1.1444091796875E-5" stroke="#ffdb58" />
+                  <Button fx:id="home" layoutX="52.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" scaleShape="false" style="-fx-background-color: none;" text="Home" wrapText="true" />
+                  <Button fx:id="mungesat" layoutX="57.0" layoutY="49.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: none;" text="Absences" textFill="#0d0d0d" />
+                  <Button fx:id="studentat" layoutX="58.0" layoutY="87.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" style="-fx-background-color: none;" text="Students" />
+                  <!--                  <Button fx:id="raportet" layoutX="61.0" layoutY="124.0" mnemonicParsing="false" onAction="#raportet" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: none;" text="Raportet" />-->
+                  <Button fx:id="profile" layoutX="60.0" layoutY="124.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="67.0" style="-fx-background-color: none;" text="Profile" />
+                  <Line endX="109.39999389648438" endY="1.1444091796875E-5" layoutX="70.0" layoutY="45.0" opacity="0.3" startX="-66.09999084472656" startY="1.1444091796875E-5" stroke="#705380" />
+                  <Line endX="109.39999389648438" endY="1.1444091796875E-5" layoutX="70.0" layoutY="79.0" opacity="0.3" startX="-66.09999084472656" startY="1.1444091796875E-5" stroke="#705380" />
+                  <Line endX="109.39999389648438" endY="1.1444091796875E-5" layoutX="70.0" layoutY="121.0" opacity="0.3" startX="-66.09999084472656" startY="1.1444091796875E-5" stroke="#705380" />
+                  <RadioButton fx:id="al" layoutX="25.0" layoutY="515.0" mnemonicParsing="false" onAction="#languageaction" prefHeight="18.0" prefWidth="39.0" text="AL" />
+                  <RadioButton fx:id="en" layoutX="72.0" layoutY="515.0" mnemonicParsing="false" onAction="#languageaction" prefHeight="18.0" prefWidth="39.0" text="EN" />
                </children>
             </AnchorPane>
          </left>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <!-- New GridPane for the statistics -->
+                  <GridPane hgap="20" layoutX="14.0" layoutY="129.0" prefHeight="135.0" prefWidth="562.0" vgap="20">
+                     <children>
+                        <Pane prefHeight="114.0" prefWidth="161.0" style="-fx-background-color: #2a9df4;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                           <children>
+                              <Label fx:id="student1" layoutX="10" layoutY="10" text="Total Students" textFill="white" />
+                              <ImageView fitHeight="52.0" fitWidth="91.0" layoutX="112.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../app/app/images/student.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="student" layoutX="-5.0" layoutY="-1.0" mnemonicParsing="false" onAction="#Studentat" opacity="0.0" prefHeight="119.0" prefWidth="183.0" text="student" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="114.0" prefWidth="147.0" style="-fx-background-color: #a64ca6;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                           <children>
+                              <Label fx:id="klasa1" layoutX="10" layoutY="10" text="Total Classes" textFill="white" />
+                              <ImageView fitHeight="52.0" fitWidth="91.0" layoutX="114.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../app/app/images/class.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="klasa" layoutX="-6.0" layoutY="-2.0" mnemonicParsing="false" onAction="#klasa" opacity="0.0" prefHeight="119.0" prefWidth="183.0" text="klasa" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="114.0" prefWidth="151.0" style="-fx-background-color: #e55e5e;" GridPane.columnIndex="2">
+                           <children>
+                              <Label fx:id="absence1" layoutX="10" layoutY="10" text="Total absences" textFill="white" />
+                              <ImageView fitHeight="52.0" fitWidth="91.0" layoutX="112.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../app/app/images/absence.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="absence" layoutX="-4.0" layoutY="-2.0" mnemonicParsing="false" onAction="#absence" opacity="0.0" prefHeight="119.0" prefWidth="183.0" text="absence" />
+                           </children>
+                        </Pane>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints maxWidth="177.599951171875" minWidth="177.599951171875" prefWidth="177.599951171875" />
+                        <ColumnConstraints maxWidth="171.200048828125" minWidth="171.200048828125" prefWidth="171.200048828125" />
+                        <ColumnConstraints maxWidth="171.200048828125" minWidth="171.200048828125" prefWidth="171.200048828125" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                  </GridPane>
+                  <ImageView fitHeight="186.0" fitWidth="285.0" layoutX="145.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../app/app/images/students.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>
