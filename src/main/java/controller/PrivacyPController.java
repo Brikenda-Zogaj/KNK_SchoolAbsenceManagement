@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 
 public class PrivacyPController implements Initializable {
 
+
     @FXML
     private VBox root;
 
