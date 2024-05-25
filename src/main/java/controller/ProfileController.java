@@ -48,7 +48,7 @@ public class ProfileController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        conn = ConnexionDB.getConnection();
+        conn = ConnexionDB.Connection();
         currentUser = SessionManager.getInstance().getCurrentUser();
         if (currentUser != null) {
             fetchAndPopulateUserData(currentUser.getId());
