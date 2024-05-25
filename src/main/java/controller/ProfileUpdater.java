@@ -44,7 +44,7 @@ public class ProfileUpdater {
     }
 
     public void updateUsernameInUsersTable() {
-        try (Connection connection = ConnexionDB.getConnection()) {
+        try (Connection connection = ConnexionDB.Connect()) {
             updateUsername(connection);
             showMessage("Username updated successfully in the users table.");
         } catch (SQLException e) {
@@ -54,7 +54,7 @@ public class ProfileUpdater {
     }
 
     public void updateProfileInSignupTable() {
-        try (Connection connection = ConnexionDB.getConnection()) {
+        try (Connection connection = ConnexionDB.Connect()) {
             updateProfile(connection);
             showMessage("Profile updated successfully in the signup_users table.");
         } catch (SQLException e) {
@@ -64,7 +64,7 @@ public class ProfileUpdater {
     }
 
     public void fetchProfileInfo(String username) {
-        try (Connection connection = ConnexionDB.getConnection();
+        try (Connection connection = ConnexionDB.Connect();
              PreparedStatement statement = connection.prepareStatement("SELECT username, first_name, last_name, subject, email, phone FROM signup_users WHERE username = ?")) {
             statement.setString(1, username);
             try (ResultSet resultSet = statement.executeQuery()) {

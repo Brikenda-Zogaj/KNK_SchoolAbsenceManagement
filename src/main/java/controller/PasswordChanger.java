@@ -51,7 +51,7 @@ public class PasswordChanger {
         String currentSalt = null;
         String currentHashedPassword = null;
 
-        try (Connection connection = ConnexionDB.getConnection();
+        try (Connection connection = ConnexionDB.Connect();
              PreparedStatement statement = connection.prepareStatement("SELECT password, salt FROM users WHERE username = ?")) {
             statement.setString(1, username);
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -80,7 +80,7 @@ public class PasswordChanger {
         String newSalt = PasswordHasher.generateSalt();
         String newSaltedHash = PasswordHasher.generateSaltedHash(newPassword, newSalt);
 
-        try (Connection connection = ConnexionDB.getConnection();
+        try (Connection connection = ConnexionDB.Connect();
              PreparedStatement statement = connection.prepareStatement("UPDATE users SET password = ?, salt = ? WHERE username = ?")) {
             statement.setString(1, newSaltedHash);
             statement.setString(2, newSalt);
