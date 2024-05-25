@@ -1,11 +1,15 @@
+
 package controller;
 
 import database.ConnexionDB;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.SessionManager;
 import model.User;
@@ -13,21 +17,19 @@ import model.User;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ProfileController implements Initializable {
 
+    public TextField cUsername;
+    public TextField nUsername;
+    public Label emri;
     @FXML
     private Label editId;
     @FXML
     private Label privacyId;
     @FXML
     private Label changePassword;
-    @FXML
-    private Button editId1;
     @FXML
     private TextField fname;
     @FXML
@@ -42,105 +44,88 @@ public class ProfileController implements Initializable {
     private Button saveEditId;
     @FXML
     private Button logOut;
-
+    private Stage stage;
     private Connection conn;
     private User currentUser;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        privacyId.setOnMouseClicked(actionEvent -> redirectToPrivacy());
+        changePassword.setOnMouseClicked(actionEvent -> redirectToPassword());
+        logOut.setOnAction(actionEvent -> redirectToLogIn());
+
+        saveEditId.setOnAction(actionEvent ->saveChanges());
+        String currentUsername = cUsername.getText(); // Assuming you have a field for current username
+        String newUsername = nUsername.getText();
+
         conn = ConnexionDB.getConnection();
         currentUser = SessionManager.getInstance().getCurrentUser();
         if (currentUser != null) {
-            fetchAndPopulateUserData(currentUser.getId());
+
         } else {
-            // Handle the case where no user is logged in
-        }
-        logOut.setOnAction(actionEvent -> logout());
-        saveEditId.setOnAction(actionEvent -> saveChanges());
-    }
 
-    private void fetchAndPopulateUserData(int userId) {
-        try {
-            String query = "SELECT first_name, last_name, subject, email, phone FROM signup_users WHERE user_id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(query);
-            pstmt.setInt(1, userId);
-            ResultSet rs = pstmt.executeQuery();
-
-            if (rs.next()) {
-                String firstName = rs.getString("first_name");
-                String lastName = rs.getString("last_name");
-                String subject = rs.getString("subject");
-                String email = rs.getString("email");
-                String phone = rs.getString("phone");
-
-                // Populate the text fields
-                fname.setText(firstName);
-                lname.setText(lastName);
-                tsubject.setText(subject);
-                temail.setText(email);
-                tphone.setText(phone);
-
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            // Handle the exception
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("An error occurred while fetching the user data.");
-            alert.showAndWait();
         }
     }
-
+    @FXML
     private void saveChanges() {
+        String currentUsername = cUsername.getText();
+        String newUsername = nUsername.getText();
         String firstName = fname.getText();
         String lastName = lname.getText();
         String subject = tsubject.getText();
         String email = temail.getText();
         String phone = tphone.getText();
 
-        try {
-            String query = "UPDATE signup_users SET first_name = ?, last_name = ?, subject = ?, email = ?, phone = ? WHERE user_id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(query);
-            pstmt.setString(1, firstName);
-            pstmt.setString(2, lastName);
-            pstmt.setString(3, subject);
-            pstmt.setString(4, email);
-            pstmt.setString(5, phone);
-            pstmt.setInt(6, currentUser.getId());
-            pstmt.executeUpdate();
+        ProfileUpdater profileUpdater = new ProfileUpdater(currentUsername, newUsername);
 
+        profileUpdater.setFirstName(firstName);
+        profileUpdater.setLastName(lastName);
+        profileUpdater.setSubject(subject);
+        profileUpdater.setEmail(email);
+        profileUpdater.setPhone(phone);
 
-            // Notify the user
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Profile Updated");
-            alert.setHeaderText(null);
-            alert.setContentText("Profile updated successfully!");
-            alert.showAndWait();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            // Handle the exception
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("An error occurred while updating the profile.");
-            alert.showAndWait();
-        }
+        profileUpdater.updateProfileInSignupTable();
+        profileUpdater.updateUsernameInUsersTable();
     }
 
-    private void logout() {
-        SessionManager.getInstance().setCurrentUser(null);
-        redirectToLogin();
-    }
 
-    private void redirectToLogin() {
+    public void redirectToLogIn() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
+        Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/LogIn.fxml"));
-            Stage stage = (Stage) logOut.getScene().getWindow();
-            stage.setScene(new Scene(loader.load()));
-            stage.show();
+            root = loader.load();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
+        Stage stage = (Stage) logOut.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
+    public void redirectToPassword() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Password.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage stage = (Stage) changePassword.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+    public void redirectToPrivacy() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/PrivacyPolicy.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage stage = (Stage) privacyId.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+
 }
