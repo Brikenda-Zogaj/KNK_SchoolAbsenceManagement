@@ -140,7 +140,7 @@ public class SignUpController implements Initializable {
                 return;
             }
 
-            con = ConnexionDB.Connection();
+            con = ConnexionDB.Connect();
 
             // Generate salt and salted hash
             String salt = PasswordHasher.generateSalt();

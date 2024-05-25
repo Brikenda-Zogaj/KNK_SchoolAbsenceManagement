@@ -149,7 +149,7 @@ public class LoginController implements Initializable {
     public void login() {
         PreparedStatement st = null;
         ResultSet rs = null;
-        Connection con = ConnexionDB.Connection();
+        Connection con = ConnexionDB.Connect();
         try {
             st = con.prepareStatement("SELECT * FROM users WHERE USERNAME =?");
             st.setString(1, tname.getText());

@@ -58,7 +58,7 @@ public class ProfileController implements Initializable {
         String currentUsername = cUsername.getText(); // Assuming you have a field for current username
         String newUsername = nUsername.getText();
 
-        conn = ConnexionDB.getConnection();
+        conn = ConnexionDB.Connect();
         currentUser = SessionManager.getInstance().getCurrentUser();
         if (currentUser != null) {
 
