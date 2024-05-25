@@ -1,4 +1,3 @@
-
 package controller;
 
 import database.ConnexionDB;
@@ -50,7 +49,6 @@ public class ProfileController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-<<<<<<< HEAD
 
         privacyId.setOnMouseClicked(actionEvent -> redirectToPrivacy());
         changePassword.setOnMouseClicked(actionEvent -> redirectToPassword());
@@ -61,9 +59,6 @@ public class ProfileController implements Initializable {
         String newUsername = nUsername.getText();
 
         conn = ConnexionDB.getConnection();
-=======
-        conn = ConnexionDB.Connection();
->>>>>>> 87e3f05352d0167e427900f953620058e9d34045
         currentUser = SessionManager.getInstance().getCurrentUser();
         if (currentUser != null) {
 
