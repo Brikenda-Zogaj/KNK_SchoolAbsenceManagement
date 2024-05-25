@@ -123,5 +123,99 @@
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <Pane prefHeight="26.0" prefWidth="323.0" stylesheets="@.
+                        <Pane prefHeight="26.0" prefWidth="323.0" stylesheets="@../app/Style.css">
+                            <children>
+                                <TextField fx:id="nUsername" layoutX="11.0" prefHeight="25.0" prefWidth="282.0" />
+                            </children>
+                        </Pane>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="63.0" prefHeight="26.0" prefWidth="444.0">
+                    <children>
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="122.0" stylesheets="@../app/Style.css" text="First Name">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Pane prefHeight="26.0" prefWidth="323.0" stylesheets="@../app/Style.css">
+                            <children>
+                                <TextField fx:id="fname" layoutX="11.0" prefHeight="25.0" prefWidth="282.0" />
+                            </children>
+                        </Pane>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="179.0" prefHeight="26.0" prefWidth="444.0">
+                    <children>
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="122.0" stylesheets="@../app/Style.css" text="Last Name">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Pane prefHeight="26.0" prefWidth="323.0" stylesheets="@../app/Style.css">
+                            <children>
+                                <TextField fx:id="lname" layoutX="11.0" prefHeight="25.0" prefWidth="282.0" />
+                            </children>
+                        </Pane>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="235.0" prefHeight="26.0" prefWidth="444.0">
+                    <children>
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="122.0" stylesheets="@../app/Style.css" text="Subject">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Pane prefHeight="26.0" prefWidth="323.0" stylesheets="@../app/Style.css">
+                            <children>
+                                <TextField fx:id="tsubject" layoutX="11.0" prefHeight="25.0" prefWidth="282.0" />
+                            </children>
+                        </Pane>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <VBox layoutX="294.0" layoutY="375.0" prefHeight="165.0" prefWidth="444.0" spacing="30.0">
+            <children>
+                <Label prefHeight="27.0" prefWidth="168.0" text="Contatct Info">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="444.0">
+                    <children>
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="122.0" stylesheets="@../app/Style.css" text="Email">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Pane prefHeight="26.0" prefWidth="323.0" stylesheets="@../app/Style.css">
+                            <children>
+                                <TextField fx:id="temail" layoutX="11.0" prefHeight="25.0" prefWidth="282.0" />
+                            </children>
+                        </Pane>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="37.0" prefHeight="26.0" prefWidth="444.0">
+                    <children>
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="122.0" stylesheets="@../app/Style.css" text="Phone ">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Pane prefHeight="26.0" prefWidth="323.0" stylesheets="@../app/Style.css">
+                            <children>
+                                <TextField fx:id="tphone" layoutX="11.0" prefHeight="25.0" prefWidth="282.0" />
+                            </children>
+                        </Pane>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <Button fx:id="saveEditId" layoutX="566.0" layoutY="540.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="155.0" style="-fx-background-color: green;" text="Save Changes" textFill="WHITE" textOverrun="CLIP">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
 
