@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Scene?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.PrivacyPController"
+      spacing="10">
+
+    <children>
+        <Label text="Privacy Policy" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <Label text="Welcome to our privacy policy page. This page outlines how we collect, use, and protect your personal information."/>
+        <Label text="Information Collected: We collect various types of information from users, including personal and non-personal information."/>
+        <Label text="How Information is Collected: We collect information through website forms, cookies, and third-party services."/>
+        <Label text="Purposes of Collection: We collect information to provide and improve our services, personalize user experience, and for marketing purposes."/>
+        <Label text="Use of Cookies/Tracking Technologies: We use cookies for various purposes such as analytics and advertising. You can manage your cookie preferences in your browser settings."/>
+        <Label text="Third-Party Disclosure: We may share user information with third parties for advertising and analytics purposes."/>
+        <Label text="Data Security: We take measures to protect user information from unauthorized access, disclosure, alteration, or destruction."/>
+        <Label text="User Rights: You have the right to access, correct, or delete your personal information. Contact us if you have any questions or concerns."/>
+        <Label text="Policy Changes: We may update our privacy policy from time to time. Any changes will be communicated to users and will take effect immediately."/>
+        <Label text="Contact Information: If you have any questions or concerns about our privacy policy, please contact us at privacy@example.com."/>
+    </children>
+</VBox>
