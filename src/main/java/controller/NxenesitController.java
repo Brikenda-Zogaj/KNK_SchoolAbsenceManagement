@@ -101,7 +101,7 @@ public class NxenesitController implements Initializable {
             String email = emailField.getText();
 
             try (Connection conn = dc.getConnection()) {
-                String query = "UPDATE nxenesit SET emri = ?, emri_prindit = ?, mbiemri = ?, email = ? WHERE id = ?";
+                String query = "UPDATE nxenesit SET emri = ?, emriprindit = ?, mbiemri = ?, email = ? WHERE id = ?";
                 PreparedStatement preparedStatement = conn.prepareStatement(query);
                 preparedStatement.setString(1, emri);
                 preparedStatement.setString(2, emriPrindit);
@@ -131,7 +131,7 @@ public class NxenesitController implements Initializable {
             String email = emailField.getText();
 
             try (Connection conn = dc.getConnection()) {
-                String query = "INSERT INTO nxenesit (emri, emri_prindit, mbiemri, email) VALUES (?, ?, ?, ?)";
+                String query = "INSERT INTO nxenesit (emri, emriprindit, mbiemri, email) VALUES (?, ?, ?, ?)";
                 PreparedStatement preparedStatement = conn.prepareStatement(query);
                 preparedStatement.setString(1, emri);
                 preparedStatement.setString(2, emriPrindit);

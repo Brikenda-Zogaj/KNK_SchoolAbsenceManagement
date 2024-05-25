@@ -12,7 +12,7 @@ public class UserDAO {
         User user = null;
         String query = "SELECT first_name, last_name, subject, email, phone FROM signup_users WHERE user_id = ?";
 
-        try (Connection connection = ConnexionDB.Connect();
+        try (Connection connection = ConnexionDB.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(query)) {
             pstmt.setInt(1, userId);
             ResultSet rs = pstmt.executeQuery();
