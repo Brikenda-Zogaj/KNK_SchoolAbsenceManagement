@@ -98,7 +98,7 @@ public class PasswordChanger {
     }
 
     private void showMessage(String message, AlertType alertType) {
-        Alert alert = new Alert(alertType);
+        Alert alert = new Ale rt(alertType);
         alert.setContentText(message);
         alert.show();
     }
